@@ -1,0 +1,47 @@
+:root {
+  --bgColor: rgb(18, 55, 42);
+  --accentColor: rgb(67, 104, 80);
+  --textSecondary: rgb(173, 188, 159);
+  --textPrimary: rgb(251, 250, 218);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--bgColor);
+  color: var(--textPrimary);
+}
+
+.game {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 400px;
+  text-align: center;
+  line-height: 35px;
+  height: 140px;
+  overflow: hidden;
+  color: var(--textSecondary);
+}
+.game:focus {
+  outline: none;
+}
+
+.word {
+  display: inline-block;
+  font-family: "Roboto Mono", monospace;
+  margin: 0 5px;
+}
+.word .correct {
+  color: var(--textPrimary);
+}
+.word .incorrect {
+  color: red;
+  text-decoration: line-through;
+}/*# sourceMappingURL=style.css.map */
