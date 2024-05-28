@@ -34,7 +34,9 @@ const startGame = () => {
 	}
 	addClass(document.querySelector(".word"), "current");
 	addClass(document.querySelector(".letter"), "current");
+	gameArea.focus();
 };
+
 
 gameArea.addEventListener("keydown", (e) => {
 	const key = e.key;
@@ -100,5 +102,6 @@ gameArea.addEventListener("keydown", (e) => {
         }
     }
 });
+
 
 startGame();
