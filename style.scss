@@ -14,7 +14,7 @@ body {
     font-family: 'Roboto', sans-serif;
     background-color: var(--bgColor);
     color: var(--textPrimary);
-    font-size: 30px;
+    font-size: 18px;
 }
 
 .game {
@@ -23,11 +23,10 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 500px;
-    height: 400px;
+    width: 600px;
+    height: 182px;
     text-align: center;
-    line-height: 50px;
-    height: 110px;
+    line-height: 36px;
     overflow: hidden;
     color: var(--textSecondary);
 
@@ -49,6 +48,39 @@ body {
     .incorrect {
         color: red;
         text-decoration: line-through;
+    }
+}
+
+.letter.current {
+    display: inline-block;
+    position: relative;
+}
+
+.letter.current::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: var(--textPrimary);
+    transition: width 0.5s, left 0.5s;
+    animation: border-animation 0.8s infinite;
+}
+
+/* Definiowanie animacji */
+@keyframes border-animation {
+    0% {
+        width: 0;
+        left: 50%;
+    }
+    50% {
+        width: 100%;
+        left: 0;
+    }
+    100% {
+        width: 0;
+        left: 50%;
     }
 }
 
