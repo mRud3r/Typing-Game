@@ -1,10 +1,12 @@
 const wordsBox = document.querySelector(".words");
 const gameArea = document.querySelector(".game");
+const gameTimer = document.querySelector(".timer");
 const randomWords =
 	"plausible dreamless make thermodynamics raid composure bicycle none run shoal involution storm dolce imaging cutaway member bootleg Nycticorax landmark regulation".split(
 		" "
 	);
 const wordsCount = randomWords.length;
+
 
 const createRandomWord = () => {
 	const randomIndex = Math.floor(Math.random() * randomWords.length);
@@ -34,9 +36,13 @@ const startGame = () => {
 	}
 	addClass(document.querySelector(".word"), "current");
 	addClass(document.querySelector(".letter"), "current");
+	window.timer = null;
 	gameArea.focus();
 };
 
+const scrollWordsBox = (distance) => {
+    wordsBox.scrollLeft += distance;
+};
 
 gameArea.addEventListener("keydown", (e) => {
 	const key = e.key;
@@ -47,6 +53,7 @@ gameArea.addEventListener("keydown", (e) => {
 	const isSpace = key === " ";
     const isBackspace = key === "Backspace";
     const isFirstLetter = currentLetter === currentWord.firstChild;
+
 
 	if (isLetter) {
 		if (currentLetter) {
@@ -78,16 +85,25 @@ gameArea.addEventListener("keydown", (e) => {
 			removeClass(currentLetter, "current");
 		}
 		addClass(currentWord.nextSibling.firstChild, "current");
+
+        const currentWordWidth = currentWord.offsetWidth + 10;
+        scrollWordsBox(currentWordWidth);
 	}
 
     if (isBackspace) {
         if (currentLetter && isFirstLetter) {
-            removeClass(currentWord, 'current');
-            addClass(currentWord.previousSibling, 'current');
-            removeClass(currentLetter, 'current');
-            addClass(currentWord.previousSibling.lastChild, 'current');
-            removeClass(currentWord.previousSibling.lastChild, 'correct');
-            removeClass(currentWord.previousSibling.lastChild, 'incorrect');
+            const previousWord = currentWord.previousSibling;
+            if (previousWord) {
+                removeClass(currentWord, 'current');
+                addClass(previousWord, 'current');
+                removeClass(currentLetter, 'current');
+                addClass(previousWord.lastChild, 'current');
+                removeClass(previousWord.lastChild, 'correct');
+                removeClass(previousWord.lastChild, 'incorrect');
+
+                const previousWordWidth = previousWord.offsetWidth + 10;
+                scrollWordsBox(-previousWordWidth);
+            }
         }
         if (currentLetter && !isFirstLetter) {
             removeClass(currentLetter, 'current');
@@ -102,6 +118,5 @@ gameArea.addEventListener("keydown", (e) => {
         }
     }
 });
-
 
 startGame();

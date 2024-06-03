@@ -1,5 +1,5 @@
 :root {
-  --bgColor: rgb(6, 44, 31);
+  --bgColor: rgb(11, 51, 37);
   --accentColor: rgb(111, 195, 144);
   --textSecondary: rgb(123, 133, 113);
   --textPrimary: rgb(252, 251, 216);
@@ -14,25 +14,33 @@ body {
   font-family: "Roboto", sans-serif;
   background-color: var(--bgColor);
   color: var(--textPrimary);
-  font-size: 18px;
+  font-size: 32px;
 }
 
 .game {
-  filter: blur(3px);
   position: absolute;
-  top: 50%;
+  top: 30%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  width: 600px;
-  height: 182px;
-  text-align: center;
-  line-height: 36px;
-  overflow: hidden;
+  background-color: rgba(22, 22, 22, 0.5);
+  border-radius: 15px;
+  transform: translateX(-50%);
+  padding: 20px 0;
+  width: 80%;
+  margin-top: 200px;
   color: var(--textSecondary);
+  outline: none;
+  overflow: hidden;
+  box-shadow: -5px 15px 24px 0px rgba(22, 22, 22, 0.5);
 }
 .game:focus {
-  outline: none;
   filter: blur(0px);
+}
+
+.words {
+  display: flex;
+  padding-left: 50%;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .word {

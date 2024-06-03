@@ -1,89 +1,95 @@
 :root {
-    --bgColor: rgb(6, 44, 31);
-    --accentColor: rgb(111, 195, 144);
-    --textSecondary: rgb(123, 133, 113);
-    --textPrimary: rgb(252, 251, 216);
+	--bgColor: rgb(11, 51, 37);
+	--accentColor: rgb(111, 195, 144);
+	--textSecondary: rgb(123, 133, 113);
+	--textPrimary: rgb(252, 251, 216);
 }
 
 * {
-    padding: 0;
-    margin: 0;
+	padding: 0;
+	margin: 0;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: var(--bgColor);
-    color: var(--textPrimary);
-    font-size: 18px;
+	font-family: "Roboto", sans-serif;
+	background-color: var(--bgColor);
+	color: var(--textPrimary);
+	font-size: 32px;
 }
 
 .game {
-    filter: blur(3px);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 600px;
-    height: 182px;
-    text-align: center;
-    line-height: 36px;
-    overflow: hidden;
-    color: var(--textSecondary);
+	position: absolute;
+	top: 30%;
+	left: 50%;
+	background-color: rgba(22, 22, 22, 0.5);
+	border-radius: 15px;
+	transform: translateX(-50%);
+	padding: 20px 0;
+	width: 80%;
+	margin-top: 200px;
+	color: var(--textSecondary);
+	outline: none;
+	overflow: hidden;
+	-webkit-box-shadow: -5px 15px 24px 0px rgba(22, 22, 22, 0.5);
+	-moz-box-shadow: -5px 15px 24px 0px rgba(22, 22, 22, 0.5);
+	box-shadow: -5px 15px 24px 0px rgba(22, 22, 22, 0.5);
 
-    &:focus {
-        outline: none;
-        filter: blur(0px);
-    }
+	&:focus {
+		filter: blur(0px);
+	}
 }
 
-.word { 
-    display: inline-block;
-    font-family: 'Roboto Mono', monospace;
-    margin: 0 5px;
+.words {
+	display: flex;
+	padding-left: 50%;
+	white-space: nowrap;
+	overflow: hidden;
+}
 
-    .correct {
-        color: var(--textPrimary);
-    }
+.word {
+	display: inline-block;
+	font-family: "Roboto Mono", monospace;
+	margin: 0 5px;
 
-    .incorrect {
-        color: red;
-        text-decoration: line-through;
-    }
+	.correct {
+		color: var(--textPrimary);
+	}
+
+	.incorrect {
+		color: red;
+		text-decoration: line-through;
+	}
 }
 
 .letter.current {
-    display: inline-block;
-    position: relative;
+	display: inline-block;
+	position: relative;
 }
 
 .letter.current::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    height: 2px;
-    width: 0;
-    background-color: var(--textPrimary);
-    transition: width 0.5s, left 0.5s;
-    animation: border-animation 0.8s infinite;
+	content: "";
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	height: 2px;
+	width: 0;
+	background-color: var(--textPrimary);
+	transition: width 0.5s, left 0.5s;
+	animation: border-animation 0.8s infinite;
 }
 
 /* Definiowanie animacji */
 @keyframes border-animation {
-    0% {
-        width: 0;
-        left: 50%;
-    }
-    50% {
-        width: 100%;
-        left: 0;
-    }
-    100% {
-        width: 0;
-        left: 50%;
-    }
+	0% {
+		width: 0;
+		left: 50%;
+	}
+	50% {
+		width: 100%;
+		left: 0;
+	}
+	100% {
+		width: 0;
+		left: 50%;
+	}
 }
-
-
-
-
