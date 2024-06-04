@@ -19,7 +19,7 @@ body {
 
 .game {
   position: absolute;
-  top: 30%;
+  top: 40%;
   left: 50%;
   background-color: rgba(22, 22, 22, 0.5);
   border-radius: 15px;
@@ -87,4 +87,62 @@ body {
     width: 0;
     left: 50%;
   }
+}
+.stats {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
+}
+.stats p {
+  font-size: 16px;
+}
+.stats .timer-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  background-color: rgba(22, 22, 22, 0.5);
+  padding: 30px 30px;
+  border-radius: 50%;
+  box-shadow: -5px 15px 24px 0px rgba(22, 22, 22, 0.5);
+}
+.stats .stat-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.stats .stat-section .stat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 150px;
+  color: var(--textPrimary);
+  gap: 20px;
+}
+.stats .stat-section .stat-card div {
+  background-color: rgba(22, 22, 22, 0.5);
+  padding: 20px 30px;
+  border-radius: 20px;
+  box-shadow: -5px 15px 24px 0px rgba(22, 22, 22, 0.5);
+}
+
+button#new-game-btn {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 15px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  border-radius: 15px;
+  color: var(--textSecondary);
+  transition: 0.4s;
+}
+button#new-game-btn:hover {
+  color: var(--textPrimary);
 }/*# sourceMappingURL=style.css.map */

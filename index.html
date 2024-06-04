@@ -1,22 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>TypingGame</title>
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet" />
-		<script src="https://kit.fontawesome.com/81f1cb6539.js" crossorigin="anonymous"></script>
-		<link rel="stylesheet" href="css/style.css" />
-	</head>
-	<body>
-        <main>
-			<div class="timer" id="info">60</div>
-            <div tabindex="1" class="game">
-                <div class="words"></div>
-            </div>
-        </main>
-        <script src="script.js"></script>
-    </body>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TypingGame</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/81f1cb6539.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <main>
+        <div class="stats">
+			<div class="timer-section">
+				<div class="timer" id="info">60</div>
+				<p>seconds</p>
+			</div>
+			<div class="stat-section">
+				<div class="stat-card">
+					<div id="wpm">0</div>
+					<p>words/min</p>
+				</div>
+				<div class="stat-card">
+					<div id="cpm">0</div>
+					<p>chars/min</p>
+				</div>
+				<div class="stat-card">
+					<div id="accuracy">0</div>
+					<p>% accuracy</p>
+	
+				</div>
+			</div>
+
+        </div>
+        <div tabindex="1" class="game">
+            <div class="words"></div>
+        </div>
+		<button id="new-game-btn">New Game</button>
+    </main>
+    <script src="script.js"></script>
+</body>
 </html>
+
+
+
+
+
