@@ -44,7 +44,7 @@ const startGame = () => {
 	}
 	addClass(document.querySelector(".word"), "current");
 	addClass(document.querySelector(".letter"), "current");
-	wordsBox.scrollLeft = 0; // Resetowanie przewijania
+	wordsBox.scrollLeft = 0;
 	gameArea.focus();
 	resetStats();
 };
