@@ -11,7 +11,4 @@
 <img src="projectscreenshot.png" alt="project-screenshot" width="100%">
 
   
-  
-<h2>💻 Built with</h2>
 
-Technologies used in the project:
